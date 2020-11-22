@@ -1,7 +1,7 @@
-import cv2
-import numpy as np
-from matplotlib import pyplot as plt
-from skimage.exposure import match_histograms
+import cv2 #lê imagem
+import numpy as np #usada para leitura das imagens
+from matplotlib import pyplot as plt #plota na tela os histogramas e imagens
+from skimage.exposure import match_histograms #usada no processo de especificação
 
 
 def getHistograma(imagem,linha=0,coluna=0,titulo='Imagem Original'):
@@ -31,11 +31,11 @@ def getEspecificacao(dirImagemOriginal,dirImagemReferencia): #Função de Especi
     img = cv2.imread(dirImagemOriginal)#lê a imagem Original
     img2 = cv2.imread(dirImagemReferencia)#lê a imagem Referencia
     getHistograma(img2,0,2,"Imagem de Referência")#cria histograma da imagem de referência
-    matched = match_histograms(img, img2, multichannel=True)
+    matched = match_histograms(img, img2, multichannel=True)#faz o processo de Especificação da imagem
     getHistograma(matched,0,3,"Especificação de histograma")#cria histograma de Especificação
 
 
-    
+
 ######main########
 print("Aperte Ctrl+c para sair")
 while(1):
@@ -53,4 +53,5 @@ while(1):
         break
     except:
         print("Diretório Inválido!\n")
+
 #################
