@@ -2,8 +2,6 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 from skimage.exposure import match_histograms
-from skimage import data
-
 
 
 def getHistograma(imagem,linha=0,coluna=0,titulo='Imagem Original'):
@@ -36,9 +34,9 @@ def getEspecificacao(dirImagemOriginal,dirImagemReferencia): #Função de Especi
     matched = match_histograms(img, img2, multichannel=True)
     getHistograma(matched,0,3,"Especificação de histograma")#cria histograma de Especificação
 
+
+    
 ######main########
-
-
 print("Aperte Ctrl+c para sair")
 while(1):
     try:
@@ -55,5 +53,4 @@ while(1):
         break
     except:
         print("Diretório Inválido!\n")
-
 #################
