@@ -13,7 +13,7 @@ def getHistograma(imagem,linha=0,coluna=0,titulo='Imagem Original'):
     axs[linha+1,coluna].set_xlabel('Intensidade da cor')
     axs[linha+1,coluna].set_ylabel('Quantidades de pixels')
     axs[linha,coluna].set_title(titulo)
-    axs[linha,coluna].set_axis_off()#tira o eixo x e y das imagens que ficam na linha 1
+    axs[linha,coluna].set_axis_off()#tira o eixo x e y das imagens que ficam na linha 0
     axs[linha,coluna].imshow(imagem)#mostra as imagens resultantes de cada histograma
     
 
